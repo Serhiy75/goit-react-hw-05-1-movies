@@ -3,21 +3,21 @@ import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMovieById } from 'service/Api';
 
 const defaultImg =
-  'https://www.repricerexpress.com/wp-content/uploads/2019/07/shutterstock_13308901581.jpg';
+  'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
 
 export const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
   const { movieId } = useParams();
 
   const location = useLocation();
-  const goBack = useRef(location.state?.from || '/');
+  const backLink = useRef(location.state?.from || '/');
   useEffect(() => {
     getMovieById(movieId).then(setMovie);
   }, [movieId]);
   if (!movie) return;
   return (
     <>
-      <Link to={goBack.current}>Go Back!</Link>
+      <Link to={backLink.current}>Go Back!</Link>
       <img
         src={
           movie.poster_path
