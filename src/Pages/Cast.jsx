@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getMovieCredits } from 'service/Api';
 
 const defaultImg =
-  'https://www.repricerexpress.com/wp-content/uploads/2019/07/shutterstock_13308901581.jpg';
+  'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
 
 export const Cast = () => {
   const [cast, setCast] = useState([]);
